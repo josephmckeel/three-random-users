@@ -9,14 +9,14 @@ window.addEventListener('hashchange', () => { //is waiting for any change in has
     const idStr = window.location.hash.slice(1) //index after has as string needed because data-is is a string
     const idNum = window.location.hash.slice(1) * 1 //index as a number, needed for logic
     const userCards = [...document.querySelectorAll('.user')] //arr of all users '...' needed because queryselector all returns an arr-like object, needs to be coerced into an arr
-    console.log(idStr)
+
     if (Number.isNaN(idNum) || idNum > userCards.length || idNum <= 0) { //checking to make sure the number is workable, meaning withhin the scope of uor users (not too high or too low)
         userCards.forEach(card => {
             card.classList.remove('selected', 'hidden') //if it is out of scope, remove all classes
    
         })
     } else {
-       
+      
 
         userCards.forEach(card => {
         //if its not out of our scope then we need to check to see if it was clicked
